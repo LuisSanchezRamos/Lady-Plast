@@ -12,6 +12,9 @@ def conectar():
 def login():
     if request.method == "POST":
         usuario = request.form["usuario"]
+        session["usuario"] = usuario
+        
+        
         clave = request.form["clave"]
 
         con = conectar()
@@ -24,7 +27,7 @@ def login():
         con.close()
 
         if fila and check_password_hash(fila[1], clave):
-            session["user_id"] = fila[0]
+            session["user_id"] = fila[0]    
             session["rol"] = fila[2]
 
             if fila[2] == "admin":
@@ -44,11 +47,11 @@ def admin():
     return render_template("admin.html")
 
 # Ruta jefe produccion
-@app.route("/jefe-produccion")
+@app.route("/Jefe-produccion")
 def usuario():
     if "rol" not in session or session["rol"] != "encargada_produccion":
         return redirect(url_for("login"))
-    return render_template("jefe-produccion.html")
+    return render_template("Jefe-produccion.html")
 
 # logout
 @app.route("/logout")

@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-
-   
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/produccion.css') }}">
+    
 </head>
 <body>
-
- 
-  <h1>Panel Produccion</h1>
-<a href="/logout">Cerrar sesión</a>
-
+    <header >
+        <section class="header-banner">
+        <img src="{{ url_for('static', filename='css/Logotipo-LADY-PLAST-MEL.webp') }}" alt="Logotipo de la empresa LADY PLAST">
+        <h1 >Panel de Produccion</h1>
+         </section>
+        <p>Bienvenida: {{ session['usuario'] }}</p>
+       
+     </header>
+     <main>
+        <nav>
+            <ul class="nav-logo">
+                <li><a href=""><i class="fa-solid fa-home"></i> Home</a></li>
+                <li><a href=""><i class="fa-solid fa-people-group"></i>Personal</a></li>
+                <li><a href=""><i class="fa-solid fa-city"></i>Produccion</a></li>
+                <li><a href=""><i class="fa-solid fa-cash-register"></i>Pedidos</a></li>
+                <li><a href=""><i class="fa-solid fa-cart-flatbed"></i>Inventario</a></li>
+                <li><a href=""><i class="fa-solid fa-boxes-stacked"></i>Stock Material</a></li>
+                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesión</a></li>
+            </ul>
+        </nav>
+   
+    
+        
+    </main>
 </body>
 </html>

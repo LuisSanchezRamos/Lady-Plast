@@ -5,8 +5,8 @@ con = sqlite3.connect("login.db")
 cur = con.cursor()
 
 usuarios = [
-    ("admin", generate_password_hash("1234"), "admin"),
-    ("Paola", generate_password_hash("1234"), "encargada_produccion")
+    ("", generate_password_hash(""), ""),
+    ("", generate_password_hash(""), "")
 ]
 
 cur.executemany(

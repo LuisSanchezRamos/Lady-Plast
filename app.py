@@ -44,11 +44,11 @@ def admin():
     return render_template("admin.html")
 
 # Ruta jefe produccion
-@app.route("/jefe-produccion")
+@app.route("/Jefe-produccion")
 def usuario():
     if "rol" not in session or session["rol"] != "encargada_produccion":
         return redirect(url_for("login"))
-    return render_template("jefe-produccion.html")
+    return render_template("Jefe-produccion.html")
 
 # logout
 @app.route("/logout")

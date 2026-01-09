@@ -13,24 +13,44 @@
         <img src="{{ url_for('static', filename='css/Logotipo-LADY-PLAST-MEL.webp') }}" alt="Logotipo de la empresa LADY PLAST">
         <h1 >Panel de Produccion</h1>
          </section>
-        <p>Bienvenida: {{ session['usuario'] }}</p>
+        <p>Bienvenido(a):  {{ session['usuario'] }}</p>
        
      </header>
-     <main>
-        <nav>
-            <ul class="nav-logo">
-                <li><a href=""><i class="fa-solid fa-home"></i> Home</a></li>
-                <li><a href=""><i class="fa-solid fa-people-group"></i>Personal</a></li>
-                <li><a href=""><i class="fa-solid fa-city"></i>Produccion</a></li>
-                <li><a href=""><i class="fa-solid fa-cash-register"></i>Pedidos</a></li>
-                <li><a href=""><i class="fa-solid fa-cart-flatbed"></i>Inventario</a></li>
-                <li><a href=""><i class="fa-solid fa-boxes-stacked"></i>Stock Material</a></li>
-                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesión</a></li>
+     <main class="main-container">
+        <nav class="nav-logo">
+            <ul>
+                <li><a class="active" data-tab="home" href="#home"><i class="fa-solid fa-home"></i> Home</a></li>
+                <li><a data-tab="personal" href="#personal"><i class="fa-solid fa-people-group"></i> Personal</a></li>
+                <li><a data-tab="produccion" href="#produccion"><i class="fa-solid fa-city"></i> Producción</a></li>
+                <li><a data-tab="pedidos" href="#pedidos"><i class="fa-solid fa-cash-register"></i> Pedidos</a></li>
+                <li><a data-tab="inventario" href="#inventario"><i class="fa-solid fa-cart-flatbed"></i> Inventario</a></li>
+                <li><a data-tab="stock" href="#stock"><i class="fa-solid fa-boxes-stacked"></i> Stock Material</a></li>
+                <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a></li>
             </ul>
         </nav>
-   
-    
-        
+
+        <div class="tab-container">
+            <section id="home" class="tab active">
+                <div class="principal-informacion">
+                    <div class="column inventario-actual">
+                        <h3 class="titulo-column">Inventario Actual</h3>   
+                        <h5 class="titulo-materias">Material </h5>
+                    </div>
+                    <div class="column produccion-dia">
+                        <h3 class="titulo-column">Producción del Día</h3>
+                    </div>
+                    <div class="column horarios-turnos">
+                        <h3 class="titulo-column">Horario del Turno</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="personal" class="tab">
+                Contenido Personal
+            </section>
+        </div>
     </main>
+
+    <script src="{{ url_for('static', filename='css/main.js') }}"></script>
 </body>
 </html>
